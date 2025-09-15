@@ -1,25 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MrP</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>MrP</title>
 </head>
-<body>
-    <h1>Ivanov Artiom</h1>
-    <p>Hi! My name is Artiom Ivanov, im known to be very straight forward and with an edge cutting tongue, im a professional gambler and developer, entreprenuer and husband , very full time 😇</p>
+<body class="bg-zinc-800 text-gray-200 font-serif transition-colors duration-500">
+  <main class="max-w-3xl mx-auto p-8 space-y-8">
+    <!-- Name -->
+    <header>
+      <h1 class="text-4xl font-bold underline decoration-teal-400 decoration-2 underline-offset-4">
+        Ivanov Artiom
+      </h1>
+      <p class="mt-4 text-lg leading-relaxed">
+        Hi! My name is Artiom Ivanov, I'm known to be very straight forward and with an edge cutting tongue. 
+        I'm a professional gambler and developer, entrepreneur and husband, very full time 😇
+      </p>
+      <p class="mt-2 italic">Current stack — <strong class="text-teal-400">Python</strong></p>
+    </header>
 
+    <!-- Social Media Links -->
     <section>
-        <h3>My social media links</h3>
-        <ul>
-            <li><a href="https://github.com/MrP-god"></a></li>
-        </ul>
-    </section> 
-    <section>
-        <h3>My projects</h3>
-        
-
+      <h2 class="text-2xl font-bold underline decoration-teal-400 decoration-2 underline-offset-4 mb-4">
+        My social media links
+      </h2>
+      <p class="mb-4 text-sm text-gray-400">
+        If a certain social media profile is not listed here, it probably does not belong to me and is operated by somebody else.
+      </p>
+      <ul class="space-y-2 list-disc list-inside text-lg">
+        <li><a href="https://github.com/MrP-god" class="text-teal-400 hover:text-teal-300">GitHub.com/MrP-god</a> — Personal GitHub</li>
+        <li><a href="https://www.youtube.com/@IvanovArtiom" class="text-teal-400 hover:text-teal-300">YouTube.com/@IvanovArtiom</a> — Italian main YouTube</li>
+        <li><a href="https://www.youtube.com/@IvanovLIVE1" class="text-teal-400 hover:text-teal-300">YouTube.com/@IvanovLIVE1</a> — English secondary YouTube</li>
+        <li><a href="https://www.tiktok.com/@poseidon_the_king?lang=en" class="text-teal-400 hover:text-teal-300">TikTok.com/@poseidon</a> — Main coding TikTok account</li>
+      </ul>
     </section>
-    <p>2025 Artiom Ivanov</p>
+
+    <!-- Projects -->
+    <section>
+      <h2 class="text-2xl font-bold underline decoration-teal-400 decoration-2 underline-offset-4 mb-4">
+        My projects
+      </h2>
+      <ul class="space-y-4 list-disc list-inside text-lg">
+        <li>
+          <a href="https://personal-ebook-store.onrender.com" class="text-teal-400 hover:text-teal-300">Ivanov Ebook Store</a> —
+          <strong>main project</strong>, the biggest and professional project made with Python.
+          <a href="https://github.com/MrP-god/ebook-store" class="text-teal-400 hover:text-teal-300">GitHub.com/MrP-god/ebook-store</a>
+        </li>
+        <li>
+          PRIVATE REPO (still) — <strong>side project</strong>: Crypto aggregator connecting to exchanges’ websockets,
+          collecting trades and aggregating them to calculate quant trading data, with webapp for developing custom strategies.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-sm text-gray-500 pt-8">
+      © 2025 Artiom Ivanov
+    </footer>
+  </main>
+
+  <!-- Sleek Toggle Bottom Right -->
+  <div class="fixed bottom-6 right-6">
+    <button id="themeToggle" 
+      class="w-14 h-7 flex items-center bg-gray-600 rounded-full p-1 transition-colors duration-300">
+      <div id="toggleCircle" class="w-5 h-5 bg-white rounded-full shadow-md transform transition-transform duration-300"></div>
+    </button>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById("themeToggle");
+    const toggleCircle = document.getElementById("toggleCircle");
+    const body = document.body;
+
+    let darkMode = true; // start in dark
+
+    toggleBtn.addEventListener("click", () => {
+      darkMode = !darkMode;
+
+      if (darkMode) {
+        // DARK THEME
+        body.classList.remove("bg-teal-50", "text-gray-900");
+        body.classList.add("bg-zinc-800", "text-gray-200");
+        toggleBtn.classList.remove("bg-teal-400");
+        toggleBtn.classList.add("bg-gray-600");
+        toggleCircle.classList.remove("translate-x-7");
+      } else {
+        // LIGHT THEME
+        body.classList.remove("bg-zinc-800", "text-gray-200");
+        body.classList.add("bg-teal-50", "text-gray-900");
+        toggleBtn.classList.remove("bg-gray-600");
+        toggleBtn.classList.add("bg-teal-400");
+        toggleCircle.classList.add("translate-x-7");
+      }
+    });
+  </script>
 </body>
 </html>
